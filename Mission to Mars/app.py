@@ -14,7 +14,7 @@ collection = db.mars_data_entries
 
 @app.route("/")
 def home():
-    mars_data = list(db.collection.find())
+    mars_data = list(db.collection.find())[0]
     return  render_template('index.html', mars_data=mars_data)
 
 @app.route("/scrape")
