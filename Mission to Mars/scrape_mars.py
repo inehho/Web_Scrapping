@@ -35,7 +35,7 @@ def scrape():
     imgsoup = BeautifulSoup(new_html, 'html.parser')
     temp_img = imgsoup.find('img', class_='main_image')['src']
 
-    featured_image_url= 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars' + temp_img
+    featured_image_url= 'https://www.jpl.nasa.gov/' + temp_img
     print(featured_image_url)
 
     mars_twitter_url= 'https://twitter.com/marswxreport?lang=en'
@@ -107,7 +107,7 @@ def scrape():
                         "news_paragraph": news_p,
                         "featured_image": featured_image_url,
                         "Latest_Tweet": mars_weather,
-                        "Hemispheres_details": hemi_dicts,
+                        "Hemispheres_details": hemi_dicts
                         # "Table": html_table
                         }
     return mars_scrapped_data
